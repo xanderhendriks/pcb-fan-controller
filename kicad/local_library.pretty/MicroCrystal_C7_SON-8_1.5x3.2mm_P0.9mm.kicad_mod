@@ -1,0 +1,200 @@
+(footprint "MicroCrystal_C7_SON-8_1.5x3.2mm_P0.9mm"
+	(version 20260206)
+	(generator "pcbnew")
+	(generator_version "10.0")
+	(layer "F.Cu")
+	(descr "MicroCrystal C7 SON, 8 Pin (https://www.microcrystal.com/fileadmin/Media/Products/RTC/App.Manual/RV-3028-C7_App-Manual.pdf#page=107)")
+	(tags "MicroCrystal SON NoLead MicroCrystal-RV3028-C7")
+	(property "Reference" "REF**"
+		(at 0 -2.63 0)
+		(layer "F.SilkS")
+		(uuid "41862597-e8ed-4455-8237-9c640aa5256d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "MicroCrystal_C7_SON-8_1.5x3.2mm_P0.9mm"
+		(at 0 2.63 0)
+		(layer "F.Fab")
+		(uuid "0ec03517-4bf5-4321-ba28-5468b839c237")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "f0694c60-cf81-43d1-b7f7-ae6d0db04c9f")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "abec1508-c50f-42f5-ac3c-80e66dc8fec9")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "KiLib_Generator" "package/no_lead"
+		(at 0 0 0)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "95d002e8-faae-47bb-b324-10256c8a429c")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -0.86 -1.935)
+		(end 0.86 -1.935)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "52ce9cda-d301-49a3-bae4-b1fd043fe01b")
+	)
+	(fp_line
+		(start 0.86 1.935)
+		(end -0.86 1.935)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "a2607073-fb26-473b-a867-dd23f3ed4243")
+	)
+	(fp_poly
+		(pts
+			(xy -1.27 -1.82) (xy -1.55 -1.82) (xy -1.27 -2.1)
+		)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(fill yes)
+		(layer "F.SilkS")
+		(uuid "f2d88cd7-36c0-4e96-b31d-d0713b42b262")
+	)
+	(fp_rect
+		(start -1.38 -1.93)
+		(end 1.38 1.93)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "3290f729-e97c-48e3-9e7f-c2f8bf4677ed")
+	)
+	(fp_poly
+		(pts
+			(xy -0.375 -1.6) (xy 0.75 -1.6) (xy 0.75 1.6) (xy -0.75 1.6) (xy -0.75 -1.225)
+		)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "b6413f79-99f6-404f-bb7e-d160f8d78889")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 90)
+		(layer "F.Fab")
+		(uuid "5e60b5da-b8ae-4bf1-9fab-575adbea6282")
+		(effects
+			(font
+				(size 0.8 0.8)
+				(thickness 0.12)
+			)
+		)
+	)
+	(pad "1" smd roundrect
+		(at -0.65 -1.35)
+		(size 0.95 0.65)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "d5c27fb4-a85b-4ee9-8b03-f84b9fc5d7ed")
+	)
+	(pad "2" smd roundrect
+		(at -0.65 -0.45)
+		(size 0.95 0.65)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "50c355cf-c93b-4377-a6ef-74c9d1dd2337")
+	)
+	(pad "3" smd roundrect
+		(at -0.65 0.45)
+		(size 0.95 0.65)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "66a6972f-5baf-43f2-b43a-766871083b85")
+	)
+	(pad "4" smd roundrect
+		(at -0.65 1.35)
+		(size 0.95 0.65)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "76906ddb-eff7-40ea-acd3-26ff465cd70f")
+	)
+	(pad "5" smd roundrect
+		(at 0.65 1.35)
+		(size 0.95 0.65)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "501c5cd3-624c-4741-bf3c-e827c403ab4e")
+	)
+	(pad "6" smd roundrect
+		(at 0.65 0.45)
+		(size 0.95 0.65)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "18064185-bafd-4484-b9d1-901f0d07e42f")
+	)
+	(pad "7" smd roundrect
+		(at 0.65 -0.45)
+		(size 0.95 0.65)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "00054bba-253e-471d-8b58-e5b7f037afd6")
+	)
+	(pad "8" smd roundrect
+		(at 0.65 -1.35)
+		(size 0.95 0.65)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.25)
+		(uuid "17f2726c-73d2-4a97-987d-7ec63a8ea8be")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/local_library.3dshapes/RV-3028-C7.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -0 -0 90)
+		)
+	)
+)

@@ -1,0 +1,9 @@
+kicad/#auto_saved_files#
+kicad/.history/*
+kicad/.konnect/*
+kicad/*.lck
+kicad/fan_controller.step
+kicad/fan_controller-backups/*
+kicad/local_library.bak
+kicad/production/**
+kicad/fp-info-cache
