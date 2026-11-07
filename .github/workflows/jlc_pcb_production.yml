@@ -1,0 +1,135 @@
+name: JLCPCB release files
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+env:
+  PROJECT_DIR: kicad
+  PROJECT_NAME: fan_controllers
+  FT_VERSION: '5.3.1'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/kicad/kicad:10.0.2-full
+      options: --user root
+
+    steps:
+      - uses: actions/checkout@v7.0.1
+
+      - name: Resolve release version
+        shell: bash
+        run: |
+          VERSION="${GITHUB_REF_NAME#v}"
+          test -n "$VERSION"
+          echo "RELEASE_VERSION=$VERSION" >> "$GITHUB_ENV"
+          echo "RELEASE_BASENAME=${PROJECT_NAME}_${VERSION}" >> "$GITHUB_ENV"
+          echo "Release version: $VERSION"
+
+      - name: Set REVISION text variable
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import json, os, re
+
+          base = os.path.join(os.environ["PROJECT_DIR"], os.environ["PROJECT_NAME"])
+          ver = os.environ["RELEASE_VERSION"]
+
+          # Project text variable (used by kicad-cli, which synchronizes on load)
+          with open(base + ".kicad_pro") as f:
+              pro = json.load(f)
+          pro.setdefault("text_variables", {})["REVISION"] = ver
+          with open(base + ".kicad_pro", "w") as f:
+              json.dump(pro, f, indent=2)
+
+          # Board-level property snapshot (used by Fabrication Toolkit, which
+          # loads the board without SynchronizeProperties())
+          with open(base + ".kicad_pcb") as f:
+              pcb = f.read()
+          pcb, n = re.subn(
+              r'^(\t\(property "REVISION" ")[^"]*("\))',
+              rf'\g<1>{ver}\g<2>',
+              pcb, flags=re.M)
+          assert n == 1, f"expected 1 board REVISION property, patched {n}"
+          with open(base + ".kicad_pcb", "w") as f:
+              f.write(pcb)
+          print(f"REVISION={ver} written to .kicad_pro and .kicad_pcb")
+          PY
+
+      - name: Fetch Fabrication Toolkit
+        shell: bash
+        run: |
+          git clone --depth 1 --branch "$FT_VERSION" \
+            https://github.com/bennymeg/Fabrication-Toolkit.git /tmp/fabrication-toolkit
+
+      - name: Generate JLCPCB production files
+        shell: bash
+        working-directory: /tmp/fabrication-toolkit
+        run: |
+          python3 -m plugins.cli \
+            --path "$GITHUB_WORKSPACE/$PROJECT_DIR/$PROJECT_NAME.kicad_pcb" \
+            --autoTranslate \
+            --excludeDNP \
+            --archiveName "$RELEASE_BASENAME" \
+            --noBackup
+
+      - name: Export STEP
+        shell: bash
+        run: |
+          mkdir -p dist
+          kicad-cli pcb export step \
+            --subst-models \
+            --output "dist/${RELEASE_BASENAME}.step" \
+            "$PROJECT_DIR/$PROJECT_NAME.kicad_pcb"
+
+      - name: Render 3D views
+        shell: bash
+        run: |
+          for side in top bottom; do
+            kicad-cli pcb render \
+              --side "$side" \
+              --background transparent \
+              --quality high \
+              --width 1600 --height 1600 \
+              --output "dist/${RELEASE_BASENAME}_${side}.png" \
+              "$PROJECT_DIR/$PROJECT_NAME.kicad_pcb"
+          done
+
+      - name: Collect release assets
+        shell: bash
+        run: |
+          prod="$PROJECT_DIR/production"
+          echo "Production files:"
+          ls -la "$prod"
+
+          # FT output names vary slightly between versions; glob and normalize.
+          cp "$prod"/*.zip "dist/${RELEASE_BASENAME}.zip"
+          cp "$prod"/*bom*.csv "dist/${RELEASE_BASENAME}_bom.csv"
+          cp "$prod"/*positions*.csv "dist/${RELEASE_BASENAME}_positions.csv"
+
+          echo "Release assets:"
+          ls -la dist
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v3.0.2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: ${{ env.RELEASE_VERSION }}
+          generate_release_notes: true
+          body: |
+            | Top | Bottom |
+            | --- | --- |
+            | ![Top](https://github.com/${{ github.repository }}/releases/download/${{ github.ref_name }}/${{ env.RELEASE_BASENAME }}_top.png) | ![Bottom](https://github.com/${{ github.repository }}/releases/download/${{ github.ref_name }}/${{ env.RELEASE_BASENAME }}_bottom.png) |
+          files: |
+            dist/${{ env.RELEASE_BASENAME }}.zip
+            dist/${{ env.RELEASE_BASENAME }}_bom.csv
+            dist/${{ env.RELEASE_BASENAME }}_positions.csv
+            dist/${{ env.RELEASE_BASENAME }}.step
+            dist/${{ env.RELEASE_BASENAME }}_top.png
+            dist/${{ env.RELEASE_BASENAME }}_bottom.png

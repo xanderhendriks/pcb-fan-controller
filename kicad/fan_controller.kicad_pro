@@ -78,56 +78,64 @@
       ],
       "drc_exclusions": [
         [
-          "drill_out_of_range|157334600|83683600|bfe9c8e4-39ec-4aa5-b7ee-7994469cbfb0|00000000-0000-0000-0000-000000000000",
-          "0.2mm in 0.6mm via is allowed."
+          "diff_pair_gap_out_of_range|137420600|118263600|1003c608-bc81-4d30-896e-438df845e204|095998d7-c73d-43aa-b4da-e450ddb57c18",
+          "Have to match with connector pitch."
         ],
         [
-          "drill_out_of_range|157334600|85083600|6575fcd4-ef89-4039-949f-0baf94007b40|00000000-0000-0000-0000-000000000000",
-          "0.2mm in 0.6mm via is allowed."
+          "drill_out_of_range|132452600|94251600|cfa8f104-54aa-4caf-861e-cab9da123e49|00000000-0000-0000-0000-000000000000",
+          "0.2mm hole allowed in 0.6mm via."
         ],
         [
-          "drill_out_of_range|158034600|82983600|0df0d16b-861b-4b6b-a6b4-51850368998e|00000000-0000-0000-0000-000000000000",
-          "0.2mm in 0.6mm via is allowed."
+          "drill_out_of_range|132452600|95651600|e5db0e81-a476-4979-95ef-762123fdacfa|00000000-0000-0000-0000-000000000000",
+          "0.2mm hole allowed in 0.6mm via."
         ],
         [
-          "drill_out_of_range|158034600|84383600|80910912-be66-492f-97ac-57770694b701|00000000-0000-0000-0000-000000000000",
-          "0.2mm in 0.6mm via is allowed."
+          "drill_out_of_range|133152600|93551600|2a65396e-a34b-4ace-9aaf-2a5c8a2ee3c8|00000000-0000-0000-0000-000000000000",
+          "0.2mm hole allowed in 0.6mm via."
         ],
         [
-          "drill_out_of_range|158034600|85783600|9fd594d7-b9b4-40d5-83f6-f5c4ddc18629|00000000-0000-0000-0000-000000000000",
-          "0.2mm in 0.6mm via is allowed."
+          "drill_out_of_range|133152600|94951600|94a210d0-2bfb-4a34-8647-7e19d20a7352|00000000-0000-0000-0000-000000000000",
+          "0.2mm hole allowed in 0.6mm via."
         ],
         [
-          "drill_out_of_range|158734600|83683600|0a37b126-db62-489b-9e40-6ae77c2d8e34|00000000-0000-0000-0000-000000000000",
-          "0.2mm in 0.6mm via is allowed."
+          "drill_out_of_range|133152600|96351600|9d32e423-8b99-4bf4-aa53-af7c0a9fd5d3|00000000-0000-0000-0000-000000000000",
+          "0.2mm hole allowed in 0.6mm via."
         ],
         [
-          "drill_out_of_range|158734600|85083600|f5813716-ab17-4db6-9d94-0544fd83c5bd|00000000-0000-0000-0000-000000000000",
-          "0.2mm in 0.6mm via is allowed."
+          "drill_out_of_range|133852600|94251600|f5813716-ab17-4db6-9d94-0544fd83c5bd|00000000-0000-0000-0000-000000000000",
+          "0.2mm hole allowed in 0.6mm via."
         ],
         [
-          "drill_out_of_range|159434600|82983600|9d32e423-8b99-4bf4-aa53-af7c0a9fd5d3|00000000-0000-0000-0000-000000000000",
-          "0.2mm in 0.6mm via is allowed."
+          "drill_out_of_range|133852600|95651600|0a37b126-db62-489b-9e40-6ae77c2d8e34|00000000-0000-0000-0000-000000000000",
+          "0.2mm hole allowed in 0.6mm via."
         ],
         [
-          "drill_out_of_range|159434600|84383600|94a210d0-2bfb-4a34-8647-7e19d20a7352|00000000-0000-0000-0000-000000000000",
-          "0.2mm in 0.6mm via is allowed."
+          "drill_out_of_range|134552600|93551600|9fd594d7-b9b4-40d5-83f6-f5c4ddc18629|00000000-0000-0000-0000-000000000000",
+          "0.2mm hole allowed in 0.6mm via."
         ],
         [
-          "drill_out_of_range|159434600|85783600|2a65396e-a34b-4ace-9aaf-2a5c8a2ee3c8|00000000-0000-0000-0000-000000000000",
-          "0.2mm in 0.6mm via is allowed."
+          "drill_out_of_range|134552600|94951600|80910912-be66-492f-97ac-57770694b701|00000000-0000-0000-0000-000000000000",
+          "0.2mm hole allowed in 0.6mm via."
         ],
         [
-          "drill_out_of_range|160134600|83683600|e5db0e81-a476-4979-95ef-762123fdacfa|00000000-0000-0000-0000-000000000000",
-          "0.2mm in 0.6mm via is allowed."
+          "drill_out_of_range|134552600|96351600|0df0d16b-861b-4b6b-a6b4-51850368998e|00000000-0000-0000-0000-000000000000",
+          "0.2mm hole allowed in 0.6mm via."
         ],
         [
-          "drill_out_of_range|160134600|85083600|cfa8f104-54aa-4caf-861e-cab9da123e49|00000000-0000-0000-0000-000000000000",
-          "0.2mm in 0.6mm via is allowed."
+          "drill_out_of_range|135252600|94251600|6575fcd4-ef89-4039-949f-0baf94007b40|00000000-0000-0000-0000-000000000000",
+          "0.2mm hole allowed in 0.6mm via."
         ],
         [
-          "silk_edge_clearance|167694600|76658600|3bd5931e-9f23-4afb-9a30-8ef930656c05|76d6608f-4bb8-4657-b3fa-66970214432e",
-          "Antenna crosses the PCB edge."
+          "drill_out_of_range|135252600|95651600|bfe9c8e4-39ec-4aa5-b7ee-7994469cbfb0|00000000-0000-0000-0000-000000000000",
+          "0.2mm hole allowed in 0.6mm via."
+        ],
+        [
+          "unconnected_items|152002600|100755600|F.Cu|4|793710c6-a94d-4434-a582-8bf7e24ca750|4f75f4a6-62c5-4048-a49a-1aa3886c49bc",
+          "Only one switch pin required."
+        ],
+        [
+          "unconnected_items|156151600|93135600|F.Cu|4|70f9b301-f564-4b04-8362-b26050a7b21d|95b07c78-3547-46f8-84d5-c4e74687b831",
+          "Only one switch pin required."
         ]
       ],
       "meta": {
@@ -212,7 +220,7 @@
         "min_text_height": 0.8,
         "min_text_thickness": 0.08,
         "min_through_hole_diameter": 0.3,
-        "min_track_width": 0.2,
+        "min_track_width": 0.15,
         "min_via_annular_width": 0.1,
         "min_via_diameter": 0.5,
         "solder_mask_to_copper_clearance": 0.005,
@@ -336,12 +344,7 @@
     "equivalence_files": []
   },
   "erc": {
-    "erc_exclusions": [
-      [
-        "pin_to_pin|3416300|1943100|533d9ff6-45cb-4f39-aebe-96555c3d8084|72f95aa5-e327-4cdc-98b3-5b1ba84d8102|/3ce6e891-b0a7-4305-a592-3a213f3f8d4a|/3ce6e891-b0a7-4305-a592-3a213f3f8d4a|/3ce6e891-b0a7-4305-a592-3a213f3f8d4a",
-        "These are both the battery + terminal"
-      ]
-    ],
+    "erc_exclusions": [],
     "meta": {
       "version": 0
     },
@@ -529,7 +532,7 @@
       "field_name_whitespace": "warning",
       "footprint_filter": "ignore",
       "footprint_link_issues": "warning",
-      "four_way_junction": "ignore",
+      "four_way_junction": "error",
       "ground_pin_not_ground": "warning",
       "hier_label_mismatch": "error",
       "isolated_pin_label": "warning",
@@ -592,6 +595,17 @@
         "via_diameter": 0.6,
         "via_drill": 0.3,
         "wire_width": 6
+      },
+      {
+        "clearance": 0.2,
+        "name": "USB",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "priority": 0,
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.15,
+        "tuning_profile": "",
+        "via_diameter": 0.6,
+        "via_drill": 0.3
       }
     ],
     "meta": {
@@ -599,7 +613,24 @@
     },
     "net_colors": null,
     "netclass_assignments": null,
-    "netclass_patterns": []
+    "netclass_patterns": [
+      {
+        "netclass": "USB",
+        "pattern": "/USB_CONN_D+"
+      },
+      {
+        "netclass": "USB",
+        "pattern": "/USB_CONN_D-"
+      },
+      {
+        "netclass": "USB",
+        "pattern": "/USB_D+"
+      },
+      {
+        "netclass": "USB",
+        "pattern": "/USB_D-"
+      }
+    ]
   },
   "pcbnew": {
     "last_paths": {
@@ -819,7 +850,7 @@
         "uuid": "3ce6e891-b0a7-4305-a592-3a213f3f8d4a"
       }
     ],
-    "used_designators": "D1-4,#PWR1-77,C1-20,C28,J1-8,R1-20,#FLG1-3,FB1,F1,H1-4,L1,SW1-2,TP1-2,U1-5",
+    "used_designators": "",
     "variants": []
   },
   "sheets": [

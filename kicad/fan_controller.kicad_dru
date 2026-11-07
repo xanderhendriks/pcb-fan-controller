@@ -1,0 +1,17 @@
+(version 1)
+
+# USB 2.0 Full-Speed pairs: ~90 ohm differential on F.Cu over 0.1 mm prepreg to In1 (GND).
+# 0.15 mm track / 0.20 mm gap. The router uses the "opt" values; DRC checks min/max.
+(rule "USB pair geometry"
+	(condition "A.NetClass == 'USB'")
+	(constraint track_width (min 0.15mm) (opt 0.15mm))
+	(constraint diff_pair_gap (min 0.18mm) (opt 0.2mm) (max 0.25mm)))
+
+# Intra-pair skew, checked per pair (not across the two pairs).
+(rule "USB connector-side skew"
+	(condition "A.inDiffPair('/USB_CONN_D')")
+	(constraint skew (max 1mm)))
+
+(rule "USB ESP32-side skew"
+	(condition "A.inDiffPair('/USB_D')")
+	(constraint skew (max 1mm)))
